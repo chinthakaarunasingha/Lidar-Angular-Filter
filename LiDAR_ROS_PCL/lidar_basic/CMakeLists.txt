@@ -47,3 +47,8 @@ add_dependencies(process_lidar process_lidar_generate_messages_cpp)
 add_executable(passthrough src/passthrough.cpp)
 target_link_libraries(passthrough ${catkin_LIBRARIES})
 add_dependencies(passthrough passthrough_generate_messages_cpp)
+
+##convert
+add_executable(convert src/convert.cpp)
+target_link_libraries(convert ${catkin_LIBRARIES} ${OpenCV_LIBRARIES} ${PCL_LIBRARIES} )
+add_dependencies(convert convert_generate_messages_cpp)
